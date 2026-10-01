@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Classifieds Search Form</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: "Times New Roman", Times, serif;
+      margin: 20px;
+    }
+
+    /* Khung giao diện chính */
+    .form-container {
+      background-color: #c9f0f9;
+      border: 2px solid #0055ff;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 15px 25px 25px 25px;
+      box-sizing: border-box;
+    }
+
+    /* Tiêu đề biểu mẫu */
+    .title {
+      color: #ff0000;
+      font-size: 26px;
+      font-weight: bold;
+      margin: 5px 0 12px 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #7a6a58;
+      margin-bottom: 18px;
+    }
+
+    /* Nhãn câu hỏi */
+    .section-label {
+      font-weight: bold;
+      font-size: 15px;
+      margin: 14px 0 8px 0;
+      color: #000;
+    }
+
+    /* Bảng bố cục cho Radio & Checkbox */
+    .choice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 5px;
+    }
+
+    .choice-table td {
+      padding: 2px 0;
+      font-size: 15px;
+    }
+
+    .choice-table label {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Ô nhập ngày tháng */
+    .date-row {
+      font-size: 15px;
+      margin: 5px 0 10px 0;
+    }
+
+    .date-input {
+      width: 120px;
+      padding: 2px 4px;
+      font-family: inherit;
+      border: 1px solid #7f9db9;
+    }
+
+    /* Ô từ khóa */
+    .keyword-input {
+      width: 100%;
+      height: 22px;
+      border: 1px solid #7f9db9;
+      box-sizing: border-box;
+      padding: 2px 5px;
+      font-family: inherit;
+    }
+
+    /* Cụm nút bấm bằng ảnh */
+    .action-group {
+      display: flex;
+      gap: 25px;
+      margin-top: 10px;
+      padding-left: 5px;
+    }
+
+    .img-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: center;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .img-btn img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .btn-text {
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 2px;
+    }
+  input[type="radio"],
+input[type="checkbox"] {
+  accent-color: green;
+}
+
+  
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <form id="classifiedForm" action="#" method="get">
+      <div class="title">Online Classifieds Search Form</div>
+      <hr>
+
+      <!-- Mục 1: Sections (Radio) -->
+      <div class="section-label">1) Search for a classified in the following sections:</div>
+      <table class="choice-table" style="max-width: 320px;">
+        <tr>
+          <td style="width: 50%;">
+            <label><input type="radio" name="section" value="Employment"> Employment</label>
+          </td>
+          <td>
+            <label><input type="radio" name="section" value="Personal"> Personal</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label><input type="radio" name="section" value="For Sale" checked> For Sale</label>
+          </td>
+          <td>
+            <label><input type="radio" name="section" value="Miscellaneous"> Miscellanecus</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label><input type="radio" name="section" value="Housing"> Housing</label>
+          </td>
+          <td>
+            <label><input type="radio" name="section" value="All"> All of the above</label>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Mục 2: Publications (Checkbox) -->
+      <div class="section-label">2) Search the following publications:</div>
+      <table class="choice-table">
+        <tr>
+          <td style="width: 33%;">
+            <label><input type="checkbox" name="pub[]" value="Midwest times" checked> Midwest times</label>
+          </td>
+          <td style="width: 33%;">
+            <label><input type="checkbox" name="pub[]" value="Modern News"> Modern News</label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="pub[]" value="Employment Today"> Employment Today</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label><input type="checkbox" name="pub[]" value="Great Lakes Classifieds" checked> Great Lakes Classifieds</label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="pub[]" value="Middleton Daily"> Middleton Daily</label>
+          </td>
+          <td>
+            <label><input type="checkbox" name="pub[]" value="Cashtown Daily News"> Cashtown Daily News</label>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Mục 3: Date Range -->
+      <div class="section-label">
+        3) From to 
+        <input type="text" class="date-input" name="fromDate" value="mm/ydd/yy">
+        &nbsp;to&nbsp;
+        <input type="text" class="date-input" name="toDate" value="mm/dd/yy">.
+      </div>
+
+      <!-- Mục 4: Keywords -->
+      <div class="section-label">4) Enter a few keywords to describe the classified.</div>
+      <input type="text" class="keyword-input" name="keywords">
+
+      <!-- Mục 5: Actions chèn ảnh -->
+      <div class="section-label">5) Click one of the options below:</div>
+      <div class="action-group">
+        <!-- Nút Search (Submit form) -->
+        <button type="submit" class="img-btn">
+          <img src="Search.gif" alt="Search">
+        </button>
+
+        <!-- Nút Help -->
+        <button type="button" class="img-btn" onclick="alert('Trợ giúp tìm kiếm thông tin!')">
+          <img src="Help.gif" alt="Help">
+        </button>
+
+        <!-- Nút Cancel (Reset form) -->
+        <button type="reset" class="img-btn">
+          <img src="Cancel.gif" alt="Cancel">
+        </button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

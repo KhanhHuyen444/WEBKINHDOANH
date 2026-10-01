@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Jackson Electronics - Registration Form</title>
+  <style>
+    body {
+      background-color: #8cbcf8;
+      font-family: "Times New Roman", Times, serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 600px;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .logo-container img {
+      max-width: 290px;
+      height: auto;
+      display: inline-block;
+    }
+
+    h2.form-title {
+      text-align: center;
+      margin: 10px 0 6px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p.form-subtitle {
+      text-align: center;
+      margin: 0 0 15px;
+      font-size: 15px;
+    }
+
+    table.form-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    table.form-table td {
+      padding: 3px 2px;
+      vertical-align: middle;
+    }
+
+    .label-col {
+      width: 140px;
+      white-space: nowrap;
+    }
+
+    input[type="text"], select, textarea {
+      font-family: inherit;
+      font-size: 14px;
+      border: 1px solid #7f9db9;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      padding: 2px 4px;
+    }
+
+    input[type="text"] {
+      height: 22px;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid #804000;
+      margin: 8px 0;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 3px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .option-item input {
+      margin: 0;
+    }
+
+    .btn-group {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .btn-group input[type="button"] {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      padding: 3px 12px;
+      margin: 0 4px;
+      cursor: pointer;
+      background-color: #e1e1e1;
+      border: 1px solid #707070;
+      border-radius: 2px;
+    }
+
+    .btn-group input[type="button"]:hover {
+      background-color: #d0d0d0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo-container">
+      <img src="Jackson.gif" alt="Jackson Electronics Logo">
+    </div>
+
+    <h2 class="form-title">Registration Form</h2>
+    <p class="form-subtitle">Register your Jackson Electronics product here</p>
+
+    <form id="registrationForm">
+      <table class="form-table">
+        <tr>
+          <td class="label-col">First Name:</td>
+          <td><input type="text" name="firstName" style="width: 140px;"></td>
+          <td style="width: 75px; text-align: right; padding-right: 5px;">Last Name:</td>
+          <td><input type="text" name="lastName" style="width: 140px;"></td>
+        </tr>
+
+        <tr>
+          <td class="label-col">Address #1:</td>
+          <td colspan="3"><input type="text" name="address1" style="width: 260px;"></td>
+        </tr>
+
+        <tr>
+          <td class="label-col">Address #2:</td>
+          <td colspan="3"><input type="text" name="address2" style="width: 260px;"></td>
+        </tr>
+
+        <tr>
+          <td class="label-col">City:</td>
+          <td><input type="text" name="city" style="width: 180px;"></td>
+          <td colspan="2">
+            State: <input type="text" name="state" style="width: 45px;">
+            &nbsp;Zip: <input type="text" name="zip" style="width: 70px;">
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label-col">Country:</td>
+          <td colspan="3"><input type="text" name="country" value="United States" style="width: 180px;"></td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><hr class="divider"></td>
+        </tr>
+
+        <tr>
+          <td class="label-col">Product:</td>
+          <td colspan="3">
+            <select name="product" style="width: 140px;">
+              <option value="ScanMaster" selected>ScanMaster</option>
+              <option value="LaserPrint">LaserPrint</option>
+              <option value="SmartCam">SmartCam</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label-col">Date Purchased:</td>
+          <td colspan="3"><input type="text" name="datePurchased" style="width: 180px;"></td>
+        </tr>
+
+        <tr>
+          <td class="label-col">Serial #:</td>
+          <td colspan="3"><input type="text" name="serialNumber" style="width: 180px;"></td>
+        </tr>
+
+        <tr>
+          <td class="label-col" style="vertical-align: top; padding-top: 4px;">Used for:</td>
+          <td colspan="3">
+            <div class="option-grid">
+              <label class="option-item"><input type="radio" name="usedFor" value="Home"> Home</label>
+              <label class="option-item"><input type="radio" name="usedFor" value="Educational Institution"> Educational Institution</label>
+              <label class="option-item"><input type="radio" name="usedFor" value="Business" checked> Business</label>
+              <label class="option-item"><input type="radio" name="usedFor" value="Other"> Other</label>
+              <label class="option-item"><input type="radio" name="usedFor" value="Government"> Government</label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label-col" style="vertical-align: top; padding-top: 4px;">System (check all that apply):</td>
+          <td colspan="3">
+            <div class="option-grid">
+              <label class="option-item"><input type="checkbox" name="system" value="Windows"> Windows</label>
+              <label class="option-item"><input type="checkbox" name="system" value="UNIX"> UNIX</label>
+              <label class="option-item"><input type="checkbox" name="system" value="Macintosh"> Macintosh</label>
+              <label class="option-item"><input type="checkbox" name="system" value="Other"> Other</label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><hr class="divider"></td>
+        </tr>
+
+        <tr>
+          <td class="label-col" style="vertical-align: top; padding-top: 6px;">Comments?:</td>
+          <td colspan="3">
+            <textarea name="comments" rows="6" style="width: 380px; resize: vertical;"></textarea>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Nút hành động -->
+      <div class="btn-group">
+        <input type="button" value="Click to register" onclick="handleRegister()">
+        <input type="button" value="Click to cancel" onclick="handleCancel()">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function handleRegister() {
+      alert("Đăng ký");
+    }
+
+    function handleCancel() {
+      const form = document.getElementById("registrationForm");
+
+      const textInputs = form.querySelectorAll('input[type="text"], textarea');
+      textInputs.forEach(input => input.value = '');
+
+      const checkables = form.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+      checkables.forEach(input => input.checked = false);
+
+      const selects = form.querySelectorAll('select');
+      selects.forEach(select => select.selectedIndex = 0);
+    }
+  </script>
+</body>
+</html>
